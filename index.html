@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" media="screen" href="./css" />
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illo quibusdam nemo quia dolores deserunt, minima architecto? Cupiditate architecto sunt quisquam eum excepturi recusandae hic perferendis deleniti, deserunt voluptates error!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illo quibusdam nemo quia dolores deserunt, minima architecto? Cupiditate architecto sunt quisquam eum excepturi recusandae hic perferendis deleniti, deserunt voluptates error!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illo quibusdam nemo quia dolores deserunt, minima architecto? Cupiditate architecto sunt quisquam eum excepturi recusandae hic perferendis deleniti, deserunt voluptates error!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illo quibusdam nemo quia dolores deserunt, minima architecto? Cupiditate architecto sunt quisquam eum excepturi recusandae hic perferendis deleniti, deserunt voluptates error!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illo quibusdam nemo quia dolores deserunt, minima architecto? Cupiditate architecto sunt quisquam eum excepturi recusandae hic perferendis deleniti, deserunt voluptates error!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illo quibusdam nemo quia dolores deserunt, minima architecto? Cupiditate architecto sunt quisquam eum excepturi recusandae hic perferendis deleniti, deserunt voluptates error!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illo quibusdam nemo quia dolores deserunt, minima architecto? Cupiditate architecto sunt quisquam eum excepturi recusandae hic perferendis deleniti, deserunt voluptates error!</p>
+  </div>
+
+  <div id="sideContainer">
+        <div id="one"class="side-tab">
+            <div class="row">
+              <div class="col-md-1"><p class="tab">About</p></div>
+              <div class="col-md-5">
+                This is stuff about me 
+              </div>
+              <div class="col-md-5">
+                This is stuff about me 
+              </div>
+              <div class="col-md-1">
+              </div>
+            </div>
+        </div>
+        <div id="two"class="side-tab">
+            <div class="row">
+              <div class="col-md-1"><p class="tab">Store</p></div>
+              <div class="col-md-5">
+                This is stuff about me 
+              </div>
+              <div class="col-md-5">
+                This is stuff about me 
+              </div>
+              <div class="col-md-1">
+              </div>
+            </div>
+        </div>
+    </div>
+    
+
+      <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+      <script>
+        
+        var oneClicked = false;
+        var secondSlide = false;
+
+        $("#one").on("click", function(){
+          if (!oneClicked){
+            oneClicked = true;
+          } else {
+            oneClicked = false;
+          }
+          $(this).toggleClass("slideOutOne");
+        });
+
+        $("#two").on("click", function(){
+          if (oneClicked){
+            $(this).toggleClass("slideOutTwo");
+            if (!secondSlide){
+              secondSlide = true;
+            } else {
+              secondSlide = false;
+            }  
+          } else if (!oneClicked && secondSlide){
+            $(this).toggleClass("slideOutTwo");
+            secondSlide = false;
+          }
+          else {
+            $(this).toggleClass("slideOutOne");
+          }
+        });
+      
+      
+      </script>
+</body>
+</html>
