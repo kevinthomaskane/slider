@@ -59,31 +59,37 @@
         
         var oneClicked = false;
         var secondSlide = false;
+        var numOut = 0;
+        
 
         $("#about").on("click", function(){
           console.log("clicked")
-          if (!oneClicked){
-            oneClicked = true;
-          } else {
-            oneClicked = false;
-          }
-          $("#one").toggleClass("slideOutOne");
-        });
-
-        $("#store").on("click", function(){
-          if (oneClicked){
-            $("#two").toggleClass("slideOutTwo");
-            if (!secondSlide){
-              secondSlide = true;
-            } else {
-              secondSlide = false;
-            }  
-          } else if (!oneClicked && secondSlide){
-            $("#two").toggleClass("slideOutTwo");
+          if (oneClicked && secondSlide){
+            $("#two").removeClass("slideOutTwo");
             secondSlide = false;
           }
-          else {
-            $("#two").toggleClass("slideOutOne");
+          else if (!oneClicked){
+            oneClicked = true;
+            $("#one").addClass("slideOutOne");
+          } else {
+            oneClicked = false;
+            $("#one").removeClass("slideOutOne");
+          }
+        });
+
+
+        $("#store").on("click", function(){
+          if (!secondSlide && !oneClicked){
+            $("#one").addClass("slideOutOne");
+            oneClicked = true;
+            $("#two").addClass("slideOutTwo");
+            secondSlide = true;
+          } else if (oneClicked && secondSlide){
+            $("#two").removeClass("slideOutTwo");
+            secondSlide = false;
+          } else {
+            $("#two").addClass("slideOutTwo");
+            secondSlide = true;
           }
         });
       
