@@ -23,7 +23,7 @@
   <div id="sideContainer">
         <div id="one"class="side-tab">
             <div class="row">
-              <div class="col-md-1"><p class="tab">About</p></div>
+              <div class="col-md-1" ><p id="about"class="tab"><a href="#">About</a></p></div>
               <div class="col-md-5">
                 This is stuff about me 
               </div>
@@ -36,7 +36,8 @@
         </div>
         <div id="two"class="side-tab">
             <div class="row">
-              <div class="col-md-1"><p class="tab">Store</p></div>
+              <div class="col-md-1"><p id="store"class="tab"><a href="
+                #">Store</a></p></div>
               <div class="col-md-5">
                 This is stuff about me 
               </div>
@@ -59,32 +60,32 @@
         var oneClicked = false;
         var secondSlide = false;
 
-        $("#one").on("click", function(){
+        $("#about").on("click", function(){
+          console.log("clicked")
           if (!oneClicked){
             oneClicked = true;
           } else {
             oneClicked = false;
           }
-          $(this).toggleClass("slideOutOne");
+          $("#one").toggleClass("slideOutOne");
         });
 
-        $("#two").on("click", function(){
+        $("#store").on("click", function(){
           if (oneClicked){
-            $(this).toggleClass("slideOutTwo");
+            $("#two").toggleClass("slideOutTwo");
             if (!secondSlide){
               secondSlide = true;
             } else {
               secondSlide = false;
             }  
           } else if (!oneClicked && secondSlide){
-            $(this).toggleClass("slideOutTwo");
+            $("#two").toggleClass("slideOutTwo");
             secondSlide = false;
           }
           else {
-            $(this).toggleClass("slideOutOne");
+            $("#two").toggleClass("slideOutOne");
           }
         });
-      
       
       </script>
 </body>
