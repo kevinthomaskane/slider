@@ -1,16 +1,37 @@
 
 body {
   position: relative;
-  transition: 1s;
+  transition: .4s;
   z-index: 0;
   height: 1000px;
   overflow: hidden;
 }
-#home {
+
+/* home styling ================*/
+
+.tab {
+  font-size: 14px;
+  color: black;
   text-transform: uppercase;
-  text-align: center;
-  font-size: 15px;
-  color: rgb(87, 86, 86);
+  height: 5vh;
+  line-height: 5vh;
+  vertical-align: middle;
+  padding-left: 3%;
+}
+
+#home {
+  background-color: #febd9c;
+}
+
+.info-row {
+  margin-top: 15vh;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+#home img {
+  width: 100%;
+  height: 45vh;
 }
 
 a {
@@ -22,23 +43,51 @@ a:hover{
   text-decoration: none;
 }
 
+/* =========================== */
+
+/* work styling ================*/
+
+#work {
+  background-color: #fbf3d3;
+}
+
+.work-img {
+  width: 100%;
+  height: 30vh;
+}
+
+.image-container {
+  display: inline-block;
+  width: 24%;
+  height: 30vh;
+}
+.logos {
+  width: 100%;
+}
+/* =========================== */
+
+/* shop styling ================*/
+
+#shop {
+  color: white;
+  background-color: black;
+}
+
+/* =========================== */
+
 .slideOutOne {
-  background-color: rgb(214, 146, 146);
-  top: 5vh !important;
+  top: 6vh !important;
   bottom: 95vh;
   z-index: 1 !important;
-  transition: 1s;
+  transition: .4s;
   position: absolute;
-  text-align: center;
   width: 100%;
 }
 .slideOutTwo {
-  background-color: rgb(228, 65, 65);
-  top: 10vh !important;
+  top: 12vh !important;
   z-index: 1 !important;
-  transition: 1s;
+  transition: .4s;
   position: absolute;
-  text-align: center;
   width: 100%;
   bottom: 95vh;
 }
@@ -46,24 +95,21 @@ a:hover{
 #one {
   position: absolute;
   width: 100%;
-  top: 90vh;
+  top: 88vh;
   bottom: 0;
-  border: solid 1px black;
-  background-color: rgb(230, 159, 230);
-  transition: 1s; 
-  text-align: center;
+  background-color: #fbf3d3;
+  transition: .4s; 
   z-index: 1;
 }
 
 #two{
   position: absolute;
+  color: white;
   width: 100%;
-  top: 95vh;
+  top: 94vh;
   bottom: 0;
-  border: solid 1px black;
-  background-color: rgb(111, 167, 114);
-  transition: 1s; 
-  text-align: center; 
+  background-color: black;
+  transition: .4s; 
   z-index: 2;
 }
 
@@ -82,5 +128,24 @@ a:hover{
   height: 90vh;
   overflow: scroll;
 }
+
+.expand-image {
+  width: 60% !important;
+  margin: 0 auto !important;
+  height: 65vh !important;
+  z-index: 5 !important;
+  transition: .4s; 
+  float: left;
+}
+
+.shrink-image {
+  width: 10% !important;
+  height: 10vh !important;
+  margin: 0 auto !important;
+  transition: .4s; 
+  float: right;
+}
+
+
 
 
