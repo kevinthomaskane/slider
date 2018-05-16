@@ -58,11 +58,22 @@ a:hover{
 
 .image-container {
   display: inline-block;
-  width: 24%;
-  height: 30vh;
+  width: 20%;
+  height: 50vh;
+  overflow: scroll;
+  margin: 0 auto;
 }
-.logos {
+
+.image-container img {
+  display: block;
+}
+.no-text {
   width: 100%;
+  display: none;
+}
+
+.text-display {
+  display: block;
 }
 /* =========================== */
 
@@ -130,7 +141,7 @@ a:hover{
 }
 
 .expand-image {
-  width: 60% !important;
+  width: 100% !important;
   margin: 0 auto !important;
   height: 65vh !important;
   z-index: 5 !important;
@@ -139,7 +150,7 @@ a:hover{
 }
 
 .shrink-image {
-  width: 10% !important;
+  width: 50% !important;
   height: 10vh !important;
   margin: 0 auto !important;
   transition: .4s; 

@@ -42,35 +42,23 @@
     <div class="row info-row">
       <div class="image-container">
         <img id="logos" class="work-img" src="https://www.argospetinsurance.co.uk/assets/uploads/2017/12/cat-pet-animal-domestic-104827.jpeg">
-        <div class="logos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt officiis quibusdam consequuntur, nobis dolore dignissimos
+        <div class="no-text logos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt officiis quibusdam consequuntur, nobis dolore dignissimos
           eveniet! Omnis pariatur tempore sequi officia nesciunt expedita ducimus vitae. A temporibus architecto repudiandae
           quae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, tenetur sequi facilis officiis cumque
           dicta eum perspiciatis sunt obcaecati culpa labore eveniet sint repellat commodi optio, reiciendis sit aspernatur
           natus?</div>
       </div>
       <div class="image-container">
-        <img id="logos2" class="work-img" src="https://www.argospetinsurance.co.uk/assets/uploads/2017/12/cat-pet-animal-domestic-104827.jpeg">
-        <div class="logos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt officiis quibusdam consequuntur, nobis dolore dignissimos
-          eveniet! Omnis pariatur tempore sequi officia nesciunt expedita ducimus vitae. A temporibus architecto repudiandae
-          quae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, tenetur sequi facilis officiis cumque
-          dicta eum perspiciatis sunt obcaecati culpa labore eveniet sint repellat commodi optio, reiciendis sit aspernatur
-          natus?</div>
+        <img id="logos2" class="work-img" src="https://www.pets4homes.co.uk/images/articles/771/large/cat-lifespan-the-life-expectancy-of-cats-568e40723c336.jpg">
+        <div class="no-text logos2">two tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowtotwo tow two two two twotwotwowto</div>
       </div>
       <div class="image-container">
-        <img id="logos3" class="work-img" src="https://www.argospetinsurance.co.uk/assets/uploads/2017/12/cat-pet-animal-domestic-104827.jpeg">
-        <div class="logos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt officiis quibusdam consequuntur, nobis dolore dignissimos
-          eveniet! Omnis pariatur tempore sequi officia nesciunt expedita ducimus vitae. A temporibus architecto repudiandae
-          quae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, tenetur sequi facilis officiis cumque
-          dicta eum perspiciatis sunt obcaecati culpa labore eveniet sint repellat commodi optio, reiciendis sit aspernatur
-          natus?</div>
+        <img id="logos3" class="work-img" src="http://www.catster.com/wp-content/uploads/2017/08/A-fluffy-cat-looking-funny-surprised-or-concerned.jpg">
+        <div class="no-text logos3">three threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree threethree three</div>
       </div>
       <div class="image-container">
-        <img id="logos4" class="work-img" src="https://www.argospetinsurance.co.uk/assets/uploads/2017/12/cat-pet-animal-domestic-104827.jpeg">
-        <div class="logos">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt officiis quibusdam consequuntur, nobis dolore dignissimos
-          eveniet! Omnis pariatur tempore sequi officia nesciunt expedita ducimus vitae. A temporibus architecto repudiandae
-          quae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, tenetur sequi facilis officiis cumque
-          dicta eum perspiciatis sunt obcaecati culpa labore eveniet sint repellat commodi optio, reiciendis sit aspernatur
-          natus?</div>
+        <img id="logos4" class="work-img" src="https://www.petmd.com/sites/default/files/petmd-cat-happy-13.jpg">
+        <div class="no-text logos4">four four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four fourfour four four four four</div>
       </div>
     </div>
   </div>
@@ -139,7 +127,9 @@
 
   $(".work-img").on("click", function () {
     clearClasses(image_ids);
+    let className = $(this).attr("id");
     $(this).addClass("expand-image");
+    $(`.${className}`).addClass("text-display");
     for (let i = 0; i < image_ids.length; i++) {
       if (image_ids[i] !== $(this).attr("id")) {
         $(`#${image_ids[i]}`).addClass("shrink-image");
@@ -153,13 +143,14 @@
     for (let i = 0; i < arr.length; i++) {
       console.log($(`#${arr[i]}`))
       if ($(`#${arr[i]}`).attr("class").split(" ")[1]) {
-
         secondClass = $(`#${arr[i]}`).attr("class").split(" ")[1];
         console.log(secondClass)
         $(`#${arr[i]}`).removeClass(secondClass)
+        $(`.${arr[i]}`).removeClass("text-display");
       } else if ($(`#${arr[i]}`).attr("class").split(" ")[2]) {
         thirdClass = $(`#${arr[i]}`).attr("class").split(" ")[2];
         $(`#${arr[i]}`).removeClass(thirdClass)
+        $(`.${arr[i]}`).removeClass("text-display");
       }
     }
   }
