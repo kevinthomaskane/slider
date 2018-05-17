@@ -24,7 +24,7 @@ body {
 }
 
 .info-row {
-  margin-top: 15vh;
+  margin-top: 10vh;
   padding-left: 3%;
   padding-right: 3%;
 }
@@ -62,26 +62,8 @@ a:hover{
 
 .first-image:hover {
   -webkit-filter: brightness(80%);
-  animation: bounce .5s infinite alternate;
-  -webkit-animation: bounce .5s infinite alternate;
 }
 
-@keyframes bounce {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-10px);
-  }
-}
-@-webkit-keyframes bounce {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-10px);
-  }
-}
 
 .image-container img {
   max-width:100%;
@@ -164,12 +146,11 @@ max-height:100%;
 }
 
 .expand-image {
-  width: 40% !important;
+  width: 60% !important;
   margin: 0 auto !important;
   height: 65vh !important;
   z-index: 5 !important;
   transition: .4s !important; 
-  float: left !important;
 }
 
 .shrink-image {
@@ -177,7 +158,6 @@ max-height:100%;
   height: 20vh !important;
   margin: 0 auto !important;
   transition: .4s !important; 
-  float: right !important;
 }
 
 figcaption {
