@@ -199,7 +199,6 @@
 
 
   $("#work").on("click", function () {
-    console.log("clicked")
     if (oneClicked && secondSlide) {
       $("#two").removeClass("slideOutTwo");
       secondSlide = false;
@@ -252,13 +251,10 @@
     created ? $("#new-div-clone").remove() : created = true;
     let new_div = $(this).clone()
     new_div.attr("id", "new-div-clone");
-    console.log($(this))
-    console.log("new_div")
     let className = $(this).attr("id");
     $(`.${className}`).addClass("text-display");
     for (let i = 0; i < image_ids.length; i++) {
       var newClass = `class-${i}`
-      console.log($(this).attr("id"))
       if (image_ids[i] !== $(this).attr("id") && (i===1 || i ===0)) {
         $(`<style type='text/css'> .${newClass}{position: absolute !important; right: ${i === 0 ? 17 : 3}%; top: 5vh !important;  width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
         $(`#${image_ids[i]}`).addClass(`${newClass}`);
@@ -273,51 +269,49 @@
         $(`#${image_ids[i]}`).addClass(`${newClass}`);
       } else if (image_ids[i] === $(this).attr("id")){
         if (i===0){
-          console.log("in 0")
-          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 5vh !important; width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 5vh !important; width: 13% !important;  height: 22vh !important; transition: .4s !important} </style>`).appendTo("head");
           new_div.removeClass("newClass").addClass(`${newClass}`)
           new_div["0"].children[2].remove();
           $("#one").append(new_div)
           $(this).addClass("expand-image");
         } else if (i===1){
-          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 5vh !important; width: 13% !important;   transition: .4s !important} </style>`).appendTo("head");
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 5vh !important; width: 13% !important;   height: 22vh !important; transition: .4s !important} </style>`).appendTo("head");
           new_div.removeClass("newClass").addClass(`${newClass}`)
           new_div["0"].children[2].remove();
           $("#one").append(new_div)
-          console.log("here")
           $(this).addClass("expand-image");
         } else if (i===2){
-          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 25vh !important; width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 25vh !important; width: 13% !important; height: 22vh !important;  transition: .4s !important} </style>`).appendTo("head");
           new_div.removeClass("newClass").addClass(`${newClass}`)
           new_div["0"].children[2].remove();
           $("#one").append(new_div)
           $(this).addClass("expand-image");
         } else if (i===3){
-          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 25vh !important; width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 25vh !important; width: 13% !important; height: 22vh !important; transition: .4s !important} </style>`).appendTo("head");
           new_div.removeClass("newClass").addClass(`${newClass}`)
           new_div["0"].children[2].remove();
           $("#one").append(new_div)
           $(this).addClass("expand-image");
         } else if (i===4){
-          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 45vh !important; width: 13% !important;   transition: .4s !important} </style>`).appendTo("head");
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 45vh !important; width: 13% !important; height: 22vh !important;  transition: .4s !important} </style>`).appendTo("head");
           new_div.removeClass("newClass").addClass(`${newClass}`)
           new_div["0"].children[2].remove();
           $("#one").append(new_div)
           $(this).addClass("expand-image");
         } else if (i===5){
-          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 45vh !important; width: 13% !important;   transition: .4s !important} </style>`).appendTo("head");
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 45vh !important; width: 13% !important; height: 22vh !important;  transition: .4s !important} </style>`).appendTo("head");
           new_div.removeClass("newClass").addClass(`${newClass}`)
           new_div["0"].children[2].remove();
           $("#one").append(new_div)
           $(this).addClass("expand-image");
         } else if (i===6){
-          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 65vh !important; width: 13% !important;   transition: .4s !important} </style>`).appendTo("head");
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 65vh !important; width: 13% !important; height: 22vh !important;  transition: .4s !important} </style>`).appendTo("head");
           new_div.removeClass("newClass").addClass(`${newClass}`)
           new_div["0"].children[2].remove();
           $("#one").append(new_div)
           $(this).addClass("expand-image");
         } else if (i===7){
-          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 65vh !important; width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 65vh !important; width: 13% !important; height: 22vh !important; transition: .4s !important} </style>`).appendTo("head");
           new_div.removeClass("newClass").addClass(`${newClass}`)
           new_div["0"].children[2].remove();
           $("#one").append(new_div)
