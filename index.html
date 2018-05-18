@@ -123,7 +123,7 @@
     </div>
     <div class="row info-row-2">
         <div class="image-container work-img" id="logos5">
-          <p>Logos</p>
+          <p>Logos5</p>
           <img class="first-image" src="https://www.argospetinsurance.co.uk/assets/uploads/2017/12/cat-pet-animal-domestic-104827.jpeg">
           <div class="no-text logos5">
               <img src="https://www.argospetinsurance.co.uk/assets/uploads/2017/12/cat-pet-animal-domestic-104827.jpeg">
@@ -138,7 +138,7 @@
             </div>
         </div>
         <div class="image-container work-img" id="logos6">
-          <p>Logos2</p>
+          <p>Logos6</p>
           <img class="first-image" src="https://www.pets4homes.co.uk/images/articles/771/large/cat-lifespan-the-life-expectancy-of-cats-568e40723c336.jpg">
           <div class="no-text logos6">
               <img src="https://www.argospetinsurance.co.uk/assets/uploads/2017/12/cat-pet-animal-domestic-104827.jpeg">
@@ -153,7 +153,7 @@
             </div>
         </div>
         <div class="image-container work-img" id="logos7">
-          <p>Logos3</p>
+          <p>Logos7</p>
           <img class="first-image" src="https://www.pets4homes.co.uk/images/articles/771/large/cat-lifespan-the-life-expectancy-of-cats-568e40723c336.jpg">
           <div class="no-text logos7">
             <img src="https://www.argospetinsurance.co.uk/assets/uploads/2017/12/cat-pet-animal-domestic-104827.jpeg">
@@ -166,7 +166,7 @@
           </div>
         </div>
         <div class="image-container work-img" id="logos8">
-          <p>Logos4</p>
+          <p>Logos8</p>
           <img class="first-image" src="https://www.pets4homes.co.uk/images/articles/771/large/cat-lifespan-the-life-expectancy-of-cats-568e40723c336.jpg">
           <div class="no-text logos8">
             <img src="https://www.argospetinsurance.co.uk/assets/uploads/2017/12/cat-pet-animal-domestic-104827.jpeg">
@@ -244,21 +244,86 @@
   });
 
   var image_ids = ["logos", "logos2", "logos3", "logos4", "logos5", "logos6", "logos7", "logos8"];
+  var height = 10;
+  var created = false;
 
-  $(".work-img").on("click", function () {
+  $(document).on("click", ".work-img", function () {
     clearClasses(image_ids);
+    created ? $("#new-div-clone").remove() : created = true;
+    let new_div = $(this).clone()
+    new_div.attr("id", "new-div-clone");
+    console.log($(this))
+    console.log("new_div")
     let className = $(this).attr("id");
-    $(this).addClass("expand-image");
     $(`.${className}`).addClass("text-display");
     for (let i = 0; i < image_ids.length; i++) {
-      let height = i * 30;
-      let newClass = `class-${i}`
-      if (image_ids[i] !== $(this).attr("id")) {
-        console.log(height)
-        $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 5%; top: ${height}vh !important; width: 20% !important;  transition: .4s !important} </style>`).appendTo("head");
-        // $(`<style type='text/css'> .noText{display: none} </style>`).appendTo("head");
+      var newClass = `class-${i}`
+      console.log($(this).attr("id"))
+      if (image_ids[i] !== $(this).attr("id") && (i===1 || i ===0)) {
+        $(`<style type='text/css'> .${newClass}{position: absolute !important; right: ${i === 0 ? 17 : 3}%; top: 5vh !important;  width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
         $(`#${image_ids[i]}`).addClass(`${newClass}`);
-        // $(".work-img").children("p").addClass("noText")
+      } else if (image_ids[i] !== $(this).attr("id") && (i===2 || i===3) ) {
+        $(`<style type='text/css'> .${newClass}{position: absolute !important; right: ${i === 2 ? 17 : 3}%; top: 25vh !important;  width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+        $(`#${image_ids[i]}`).addClass(`${newClass}`); 
+      } else if (image_ids[i] !== $(this).attr("id") && (i===4 || i===5)){
+        $(`<style type='text/css'> .${newClass}{position: absolute !important; right: ${i === 4 ? 17 : 3}%; top: 45vh !important;  width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+        $(`#${image_ids[i]}`).addClass(`${newClass}`);
+      } else if (image_ids[i] !== $(this).attr("id") && (i===6 || i===7)){
+        $(`<style type='text/css'> .${newClass}{position: absolute !important; right: ${i === 6 ? 17 : 3}%; top: 65vh !important;  width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+        $(`#${image_ids[i]}`).addClass(`${newClass}`);
+      } else if (image_ids[i] === $(this).attr("id")){
+        if (i===0){
+          console.log("in 0")
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 5vh !important; width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+          new_div.removeClass("newClass").addClass(`${newClass}`)
+          new_div["0"].children[2].remove();
+          $("#one").append(new_div)
+          $(this).addClass("expand-image");
+        } else if (i===1){
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 5vh !important; width: 13% !important;   transition: .4s !important} </style>`).appendTo("head");
+          new_div.removeClass("newClass").addClass(`${newClass}`)
+          new_div["0"].children[2].remove();
+          $("#one").append(new_div)
+          console.log("here")
+          $(this).addClass("expand-image");
+        } else if (i===2){
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 25vh !important; width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+          new_div.removeClass("newClass").addClass(`${newClass}`)
+          new_div["0"].children[2].remove();
+          $("#one").append(new_div)
+          $(this).addClass("expand-image");
+        } else if (i===3){
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 25vh !important; width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+          new_div.removeClass("newClass").addClass(`${newClass}`)
+          new_div["0"].children[2].remove();
+          $("#one").append(new_div)
+          $(this).addClass("expand-image");
+        } else if (i===4){
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 45vh !important; width: 13% !important;   transition: .4s !important} </style>`).appendTo("head");
+          new_div.removeClass("newClass").addClass(`${newClass}`)
+          new_div["0"].children[2].remove();
+          $("#one").append(new_div)
+          $(this).addClass("expand-image");
+        } else if (i===5){
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 45vh !important; width: 13% !important;   transition: .4s !important} </style>`).appendTo("head");
+          new_div.removeClass("newClass").addClass(`${newClass}`)
+          new_div["0"].children[2].remove();
+          $("#one").append(new_div)
+          $(this).addClass("expand-image");
+        } else if (i===6){
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 17%; top: 65vh !important; width: 13% !important;   transition: .4s !important} </style>`).appendTo("head");
+          new_div.removeClass("newClass").addClass(`${newClass}`)
+          new_div["0"].children[2].remove();
+          $("#one").append(new_div)
+          $(this).addClass("expand-image");
+        } else if (i===7){
+          $(`<style type='text/css'> .${newClass}{position: absolute !important; right: 3%; top: 65vh !important; width: 13% !important;  transition: .4s !important} </style>`).appendTo("head");
+          new_div.removeClass("newClass").addClass(`${newClass}`)
+          new_div["0"].children[2].remove();
+          $("#one").append(new_div)
+          $(this).addClass("expand-image");
+        }
+  
       }
     }
   })
@@ -268,10 +333,8 @@
     let thirdClass;
     let fourthClass;
     for (let i = 0; i < arr.length; i++) {
-      console.log($(`#${arr[i]}`))
       if ($(`#${arr[i]}`).attr("class").split(" ")[2]) {
         thirdClass = $(`#${arr[i]}`).attr("class").split(" ")[2];
-        console.log(thirdClass)
         $(`#${arr[i]}`).removeClass(thirdClass)
         $(`.${arr[i]}`).removeClass("text-display");
       } else if ($(`#${arr[i]}`).attr("class").split(" ")[3]) {

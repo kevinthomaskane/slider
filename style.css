@@ -149,8 +149,10 @@ max-height:100%;
 }
 
 .expand-image {
-  width: 60% !important;
-  margin: 0 auto !important;
+  width: 55% !important;
+  position: absolute;
+  left: 3%;
+  top: 10vh;
   height: 65vh !important;
   z-index: 5 !important;
   transition: .4s !important; 
