@@ -196,13 +196,18 @@
   var oneClicked = false;
   var secondSlide = false;
   var numOut = 0;
-  
+  console.log(screen.width)
   window.addEventListener("resize", function(event) {
     if (document.body.clientWidth <= 700){
       console.log(document.body.clientWidth + ' wide by ' + document.body.clientHeight+' high');
       window.location.href = "/mobile";
     } 
   })
+
+  if( screen.width <= 700 ) {
+    console.log(screen.width, "screen width")
+    location.href = '/mobile';
+  } 
 
   $("#work").on("click", function () {
     if (oneClicked && secondSlide) {
