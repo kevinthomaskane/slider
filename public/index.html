@@ -29,7 +29,7 @@
                 numquam nemo ut ipsum, omnis eius ipsa sit reprehenderit unde iusto molestiae dolore a quibusdam.</p>
             </div>
             <div class="col-md-4">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae soluta illo libero suscipit alias quae,
+              <p>Lorem ipsum dolor sit amet <a href="/mobile">click for mobile</a>consectetur adipisicing elit. Repudiandae soluta illo libero suscipit alias quae,
                 numquam nemo ut ipsum, omnis eius ipsa sit reprehenderit unde iusto molestiae dolore a quibusdam.</p>
             </div>
           </div>
@@ -196,7 +196,13 @@
   var oneClicked = false;
   var secondSlide = false;
   var numOut = 0;
-
+  
+  window.addEventListener("resize", function(event) {
+    if (document.body.clientWidth <= 700){
+      console.log(document.body.clientWidth + ' wide by ' + document.body.clientHeight+' high');
+      window.location.href = "/mobile";
+    } 
+  })
 
   $("#work").on("click", function () {
     if (oneClicked && secondSlide) {
