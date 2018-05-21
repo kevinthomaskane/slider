@@ -10,13 +10,13 @@ body {
 /* home styling ================*/
 
 .tab {
-  font-size: 14px;
+  font-size: 24px;
   color: black;
   text-transform: uppercase;
-  height: 5vh;
-  line-height: 5vh;
+  height: 8vh;
+  line-height: 8vh;
   vertical-align: middle;
-  padding-left: 3%;
+  padding-left: 1.6%;
 }
 
 #home {
@@ -24,8 +24,16 @@ body {
 }
 
 .info-row {
-  margin-top: 10vh;
-  padding-left: 3%;
+  margin-top: 11vh;
+  padding-left: 1.5%;
+  padding-right: 3%;
+  margin-bottom: 0;
+  height: 30vh;
+}
+
+.info-row-2 {
+  margin-top: 17vh;
+  padding-left: 1.5%;
   padding-right: 3%;
   margin-bottom: 0;
   height: 30vh;
@@ -33,7 +41,11 @@ body {
 
 #home img {
   width: 100%;
-  height: 45vh;
+  height: 49vh;
+}
+
+#home p {
+  font-size: 24px;
 }
 
 a {
@@ -53,25 +65,25 @@ a:hover{
   background-color: #fbf3d3;
 }
 
-
 .image-container {
   display: inline-block;
-  width: 20%;
+  width: 23.5%;
   height: 50vh;
-  overflow: scroll;
   margin: 0 auto;
+  padding-left: 12px;
+  overflow: scroll;
 }
 
 .first-image:hover {
   -webkit-filter: brightness(80%);
 }
 
-
 .image-container img {
   max-width:100%;
-max-height:100%;
+  max-height: 100%;
+  height: 40vh;
   display: block;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
 }
 
 .no-text {
@@ -94,7 +106,7 @@ max-height:100%;
 /* =========================== */
 
 .slideOutOne {
-  top: 6vh !important;
+  top: 8vh !important;
   bottom: 95vh;
   z-index: 1 !important;
   transition: .4s;
@@ -102,7 +114,7 @@ max-height:100%;
   width: 100%;
 }
 .slideOutTwo {
-  top: 12vh !important;
+  top: 16vh !important;
   z-index: 1 !important;
   transition: .4s;
   position: absolute;
@@ -113,19 +125,18 @@ max-height:100%;
 #one {
   position: absolute;
   width: 100%;
-  top: 88vh;
+  top: 84vh;
   bottom: 0;
   background-color: #fbf3d3;
   transition: .4s; 
   z-index: 1;
-  overflow: scroll;
 }
 
 #two{
   position: absolute;
   color: white;
   width: 100%;
-  top: 94vh;
+  top: 92vh;
   bottom: 0;
   background-color: black;
   transition: .4s; 
@@ -144,8 +155,13 @@ max-height:100%;
 }
 
 .content {
-  height: 90vh;
-  overflow: scroll;
+  height: 90vh !important;
+  overflow: scroll !important;
+}
+
+.content-2 {
+  height: 74vh !important;
+  overflow: scroll !important;
 }
 
 .expand-image {
